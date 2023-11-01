@@ -9,9 +9,9 @@ import java.util.logging.Logger;
 
 public class ConexionDB {
     static public String driver = "com.mysql.jdbc.Driver";
-    static public String url = "jdbc:mysql://localhost:3306/bd_almacen";
+    static public String url = "jdbc:mysql://localhost:3303/bd_almacen";
     static public String usuario = "root";
-    static public String password = "admin";
+    static public String password = "";
     
     protected Connection conn = null;
     public ConexionDB(){

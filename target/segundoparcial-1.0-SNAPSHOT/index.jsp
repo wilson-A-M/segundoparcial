@@ -24,8 +24,8 @@
     <body>
         <div class="box">
             <h3>SEGUNDO PARCIAL TEM-742</h3>
-            <p>Nombre: Luis Alex Chura Quispe</p>
-            <p>Carnet: 9246232</p>
+            <p>Nombre: ZULEMA MITA MENDOZA</p>
+            <p>CI:10064079</p>
         </div>
         <h1>Gestion de productos</h1>
         <a href="Inicio?action=add">Nuevo producto</a>

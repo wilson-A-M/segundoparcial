@@ -67,7 +67,7 @@ public class Inicio extends HttpServlet {
         String descripcion = request.getParameter("descripcion");
         int cantidad = Integer.parseInt(request.getParameter("cantidad"));
         float precio = Float.parseFloat(request.getParameter("precio"));
-        String categoria = request.getParameter("categoria");
+        int categoria = Integer.parseInt(request.getParameter("categoria"));
         
         Almacen alm = new Almacen();
         alm.setId(id);

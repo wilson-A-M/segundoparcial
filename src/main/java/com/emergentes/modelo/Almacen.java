@@ -6,14 +6,14 @@ public class Almacen {
     private String descripcion;
     private int cantidad;
     private float precio;
-    private String categoria;
+    private int categoria;
     
     public Almacen(){
         id = 0;
         descripcion = "";
         cantidad = 0;
         precio = 0;
-        categoria = "";
+        categoria = 0 ;
     }
 
     public int getId() {
@@ -48,11 +48,11 @@ public class Almacen {
         this.precio = precio;
     }
 
-    public String getCategoria() {
+    public int getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(int categoria) {
         this.categoria = categoria;
     }
 

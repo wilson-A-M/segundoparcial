@@ -32,7 +32,7 @@
                 </tr>
                 <tr>
                     <td>Categoria:</td>
-                    <td><input type="text" name="categoria" value="${almacen.categoria}" /></td>
+                    <td><input type="number" name="categoria" value="${almacen.categoria}" /></td>
                 </tr>
                 <tr>
                     <td></td>

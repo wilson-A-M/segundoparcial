@@ -14,12 +14,12 @@ public class AlmacenDAOimpl extends ConexionDB implements AlmacenDAO {
     public void insert(Almacen almacen) throws Exception {
         try {
             this.conectar();
-            String sql = "INSERT INTO productos(descripcion,cantidad,precio,categoria)values(?,?,?,?)";
+            String sql = "INSERT INTO libros(descripcion,cantidad,precio,categoria)values(?,?,?,?)";
             PreparedStatement ps = this.conn.prepareStatement(sql);
             ps.setString(1, almacen.getDescripcion());
             ps.setInt(2, almacen.getCantidad());
             ps.setFloat(3, almacen.getPrecio());
-            ps.setString(4, almacen.getCategoria());
+            ps.setInt(4, almacen.getCategoria());
 
             ps.executeUpdate();
         } catch (SQLException e) {
@@ -33,12 +33,12 @@ public class AlmacenDAOimpl extends ConexionDB implements AlmacenDAO {
     public void update(Almacen almacen) throws Exception {
         try {
             this.conectar();
-            String sql = "UPDATE productos SET descripcion=?, cantidad=?, precio=?, categoria=? WHERE id = ?";
+            String sql = "UPDATE libros SET descripcion=?, cantidad=?, precio=?, categoria=? WHERE id = ?";
             PreparedStatement ps = this.conn.prepareStatement(sql);
             ps.setString(1, almacen.getDescripcion());
             ps.setInt(2, almacen.getCantidad());
             ps.setFloat(3, almacen.getPrecio());
-            ps.setString(4, almacen.getCategoria());
+            ps.setInt(4, almacen.getCategoria());
             ps.setInt(5, almacen.getId());
 
             ps.executeUpdate();
@@ -53,7 +53,7 @@ public class AlmacenDAOimpl extends ConexionDB implements AlmacenDAO {
     public void delete(int id) throws Exception {
         try {
             this.conectar();
-            String sql = "DELETE FROM productos WHERE id=?";
+            String sql = "DELETE FROM libros WHERE id=?";
             PreparedStatement ps = this.conn.prepareStatement(sql);
             ps.setInt(1, id);
             
@@ -70,7 +70,7 @@ public class AlmacenDAOimpl extends ConexionDB implements AlmacenDAO {
         Almacen alm = new Almacen();
         try {
             this.conectar();
-            String sql = "SELECT * FROM productos WHERE id=?";
+            String sql = "SELECT * FROM libros WHERE id=?";
             PreparedStatement ps = this.conn.prepareStatement(sql);
             ps.setInt(1, id);
 
@@ -81,7 +81,7 @@ public class AlmacenDAOimpl extends ConexionDB implements AlmacenDAO {
                 alm.setDescripcion(rs.getString("descripcion"));
                 alm.setCantidad(rs.getInt("cantidad"));
                 alm.setPrecio(rs.getFloat("precio"));
-                alm.setCategoria(rs.getString("categoria"));
+                alm.setCategoria(rs.getInt("categoria"));
             }
         } catch (SQLException e) {
             throw e;
@@ -96,7 +96,7 @@ public class AlmacenDAOimpl extends ConexionDB implements AlmacenDAO {
         ArrayList<Almacen> lista = new ArrayList<Almacen>();
         try {
             this.conectar();
-            String sql = "SELECT * FROM productos";
+            String sql = "SELECT * FROM libros";
             PreparedStatement ps = this.conn.prepareStatement(sql);
 
             ResultSet rs = ps.executeQuery();
@@ -108,7 +108,7 @@ public class AlmacenDAOimpl extends ConexionDB implements AlmacenDAO {
                 alm.setDescripcion(rs.getString("descripcion"));
                 alm.setCantidad(rs.getInt("cantidad"));
                 alm.setPrecio(rs.getFloat("precio"));
-                alm.setCategoria(rs.getString("categoria"));
+                alm.setCategoria(rs.getInt("categoria"));
 
                 lista.add(alm);
             }
